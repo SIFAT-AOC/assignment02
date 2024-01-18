@@ -33,28 +33,30 @@ function handleSearch(searchTerm){
 
 }
 
-
 function handleSortChange(event) {
-  setSortOption(event.target.value);
+  const selectedSortOption = event.target.value;
+  setSortOption(selectedSortOption);
+
   let sortedBooks;
-  switch(event.target.value) {
+  switch(selectedSortOption) {
     case 'name_asc':
-      sortedBooks = [...booksArray].sort((a, b) => a.title.localeCompare(b.title));
+      sortedBooks = [...booksArray].sort((a, b) => a.bookName.localeCompare(b.bookName));
       break;
     case 'name_desc':
-      sortedBooks = [...booksArray].sort((a, b) => b.title.localeCompare(a.title));
+      sortedBooks = [...booksArray].sort((a, b) => b.bookName.localeCompare(a.bookName));
       break;
     case 'year_asc':
-      sortedBooks = [...booksArray].sort((a, b) => a.year - b.year);
+      sortedBooks = [...booksArray].sort((a, b) => a.publishingYear - b.publishingYear);
       break;
     case 'year_desc':
-      sortedBooks = [...booksArray].sort((a, b) => b.year - a.year);
+      sortedBooks = [...booksArray].sort((a, b) => b.publishingYear - a.publishingYear);
       break;
     default:
       sortedBooks = booksArray;
   }
   setBookArray(sortedBooks);
 }
+
   return (
     <>
       <Navbar />
