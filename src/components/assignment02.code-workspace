@@ -1,0 +1,15 @@
+{
+  "folders": [
+	{
+		"name": "assignment02",
+		"path": "../.."
+	},
+	{
+		"name": "dist",
+		"path": "../../../../rnext/dist"
+	}
+],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "dist"
+  }
+}
